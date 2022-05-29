@@ -8,4 +8,4 @@ Il manque la page de détail - la page du panier - le prix à afficher - le desi
 
 # A savoir
 
-Quand vous arriver sur la page des bières il faut actualiser la page pour qu'elles apparaissent.
+Quand vous arrivez sur la page des bières il faut actualiser la page pour qu'elles apparaissent.
