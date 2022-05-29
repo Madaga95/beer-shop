@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import BiereManager from "./containers/BiereManager/BiereManager"
+import UneBiere from "./containers/UneBiere/UneBiere";
+import ShoppingCart from './components/ShoppingCart/ShoppingCart'
+import FloatingCart from "./components/FloatingCart/FloatingCart";
+import Navbar from "./components/NavBar/Navbar";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar/>
+      <FloatingCart/>
+      <Switch>
+        <Route path="/" exact render={() => <h1>Accueil</h1>}/>
+        <Route path="/bieres" exact component={BiereManager}/>
+        <Route path="/bieres/:id" render={(props) => <UneBiere nomBiere={props.match.params.id} {...props}/>} />
+      </Switch>
+      
+    </Router>
+   
   );
 }
 
